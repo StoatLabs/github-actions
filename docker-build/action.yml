@@ -37,7 +37,7 @@ runs:
         push: true
         build-args: ${{ inputs.build-args }}
         tags: |
-          ${{ inputs.aws-account }}.dkr.ecr.${{ inputs.aws-region }}.amazonaws.com/${{ inputs.aws-ecr-repo }}:${{ env.GITHUB_REF_SLUG }}-latest
+          ${{ inputs.aws-account }}.dkr.ecr.${{ inputs.aws-region }}.amazonaws.com/${{ inputs.aws-ecr-repo }}:${{ github.ref_name }}-latest
           ${{ inputs.aws-account }}.dkr.ecr.${{ inputs.aws-region }}.amazonaws.com/${{ inputs.aws-ecr-repo }}:${{ github.sha }}
           ${{ inputs.aws-account }}.dkr.ecr.${{ inputs.aws-region }}.amazonaws.com/${{ inputs.aws-ecr-repo }}:latest
         cache-from: type=gha
